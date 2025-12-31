@@ -23,9 +23,6 @@ def load_tokens(server_name):
     elif server_name in {"BR", "US", "SAC", "NA"}:
         with open("token_br.json", "r") as f:
             return json.load(f)
-    elif server_name in {"ID", "VN", "SG", "PK", "RU", "TH"}:
-        with open ("token_id.json", "r") as f:
-            return json.load(f)
     else:
         with open("token_bd.json", "r") as f:
             return json.load(f)
@@ -94,8 +91,6 @@ def make_request(encrypt, server_name, token):
         url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
     elif server_name in {"BR", "US", "SAC", "NA"}:
         url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
-    elif server_name in {"ID", "VN", "SG", "PK", "RU", "TH"}:
-        url = "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow"
     else:
         url = "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
 
@@ -153,8 +148,6 @@ def handle_requests():
             url = "https://client.ind.freefiremobile.com/LikeProfile"
         elif server_name in {"BR", "US", "SAC", "NA"}:
             url = "https://client.us.freefiremobile.com/LikeProfile"
-        elif server_name in {"ID", "VN", "SG", "PK", "RU", "TH"}:
-            url = "https://clientbp.ggpolarbear.com/LikeProfile"
         else:
             url = "https://clientbp.ggblueshark.com/LikeProfile"
         
